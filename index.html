@@ -1,42 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-  <link rel="stylesheet" href="./styles/reset.css" />
-  <link rel="stylesheet" href="./styles/styles.css" />
-</head>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./styles/reset.css" />
+    <link rel="stylesheet" href="./styles/styles.css" />
+  </head>
 
-<body>
+  <body>
+    <div class="header">BuzzQuizz</div>
 
-  <div class="header">BuzzQuizz</div>
+    <div class="masterContainer">
+      <div class="criarQuizzHome"></div>
 
-  <div class="masterContainer">
+      <div class="titleQuizzesUsuario">
+        <p onclick="enviarQuizzServidor()">Seus Quizzes</p>
+        <ion-icon onclick="criarQuizz()" name="add-circle"></ion-icon>
+      </div>
 
-    <!-- <div class="botaoParaCriarQuizz">
-      <p>Você não criou nenhum</p>
-      <p>quizz ainda :(</p>
-      <button onclick="criacaoDeQuizz()">Criar Quizz</button>
-    </div> -->
+      <div class="quizzesUsuario"></div>
 
-    <div class="titleQuizzesUsuario">
-      <p>Seus Quizzes</p>
-      <ion-icon onclick="criacaoDeQuizz()" name="add-circle"></ion-icon>
+      <p class="textoParaSecao">Todos os Quizzes</p>
+      <div class="todosQuizzes"></div>
     </div>
 
-    <div class="quizzesUsuario"></div>
-
-    <p class="textoParaSecao">Todos os Quizzes</p>
-    <div class="todosQuizzes"></div>
-  </div>
-
-
-
-  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-  <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
-  <script src="script.js"></script>  
-
-</body>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
+    <script src="script.js"></script>
+  </body>
 </html>

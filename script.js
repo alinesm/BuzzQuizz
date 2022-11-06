@@ -32,7 +32,7 @@ function pegarQuizzes() {
 
 function respostaDoServidor(resposta) {
   todosQuizzes = resposta.data;
-  // console.log(todosQuizzes);
+  console.log(todosQuizzes);
   if (idsFiltrados.length < 0) {
     document.querySelector(".criarQuizzHome").style.display = "flex";
     document.querySelector(".mostrarQuizzesUsuarios").style.display = "none";
@@ -274,7 +274,7 @@ function enviarQuizzServidor() {
     .then(armazenarIds)
     .catch((e) => {
       console.log(e);
-      // window.location.reload();
+      window.location.reload();
     });
 }
 
@@ -306,53 +306,65 @@ function armazenarIds(resposta) {
   }
 }
 
-// function armazenarIds(resposta) {
-//   listaIds = localStorage.getItem("listaDeIds");
-//   listaArmazenada = JSON.parse(listaIds);
+ function armazenarIds(resposta) {
+   listaIds = localStorage.getItem("listaDeIds");
+   listaArmazenada = JSON.parse(listaIds);
 
-//   let id = resposta.data.id;
-//   listaArmazenada.push(id);
+   let id = resposta.data.id;
+   listaArmazenada.push(id);
 
-//   listaSerializada = JSON.stringify(listaArmazenada);
+   listaSerializada = JSON.stringify(listaArmazenada);
 
-//   localStorage.setItem("listaDeIds", listaSerializada);
-// }
+   localStorage.setItem("listaDeIds", listaSerializada);
+ }
 
-// function renderCreateQuizzContainer() {
-//   const criarQuizzContainer = document.querySelector(".criarQuizzHome");
-//   criarQuizzContainer.innerHTML = "";
+ function renderCreateQuizzContainer() {
+   const criarQuizzContainer = document.querySelector(".criarQuizzHome");
+   criarQuizzContainer.innerHTML = "";
 
-//   criarQuizzContainer.innerHTML += `
-//     <p>Você não criou nenhum</p>
-//     <p>quizz ainda :(</p>
-//     <button onclick="criarQuizz()">Criar Quizz</button>
-//  `;
-// }
+   criarQuizzContainer.innerHTML += `
+     <p>Você não criou nenhum</p>
+     <p>quizz ainda :(</p>
+     <button onclick="criarQuizz()">Criar Quizz</button>
+  `;
+ }
 
-// function renderizarTodosQuizzesNaoFiltrado() {
-//   const quizzes = document.querySelector(".todosQuizzes");
-//   quizzes.innerHTML = "";
+ function renderizarTodosQuizzesNaoFiltrado() {
+   const quizzes = document.querySelector(".todosQuizzes");
+   quizzes.innerHTML = "";
 
-//   for (let i = 0; i < todosQuizzes.length; i++) {
-//     let quizz = todosQuizzes[i];
-//     quizzes.innerHTML += `
-//           <div class="quizz" onclick="irParaOQuizz(this)">
-//             <img src="${quizz.image}" />
-//             <p>${quizz.title}</p>
-//           </div>
-//       `;
-//   }
-// }
+   for (let i = 0; i < todosQuizzes.length; i++) {
+     let quizz = todosQuizzes[i];
+     quizzes.innerHTML += `
+           <div class="quizz" onclick="irParaOQuizz(this)">
+             <img src="${quizz.image}" />
+             <p>${quizz.title}</p>
+           </div>
+       `;
+   }
+ }
 
-// if (localStorage.getItem("listaDeIds") === null) {
-//   renderCreateQuizzContainer();
-//   renderizarTodosQuizzesNaoFiltrado();
-// } else {
-//   document
-//     .querySelector(".criarQuizzHome")
-//     .classList.add("criarQuizzHomeDesativado");
-//   renderizarQuizzesUsuario();
-//   console.log("mais uma lista>>>>>>>>>>>>", idsFiltrados.length);
+ if (localStorage.getItem("listaDeIds") === null) {
+   renderCreateQuizzContainer();
+   renderizarTodosQuizzesNaoFiltrado();
+ } else {
+   document
+     .querySelector(".criarQuizzHome")
+     .classList.add("criarQuizzHomeDesativado");
+   renderizarQuizzesUsuario();
+   console.log("mais uma lista>>>>>>>>>>>>", idsFiltrados.length);
 
-//   renderizarTodosQuizzesFiltrado();
-// }
+   renderizarTodosQuizzesFiltrado();
+ }
+
+/*-------------------------------------------------------
+                    Entra no Quizz
+--------------------------------------------------------*/
+
+function irParaOQuizz(){
+  const pag_1 = document.querySelector('.masterContainer');
+  const pag_2 = document.querySelector('.masterContainer_2');
+  pag_1.classList.add('close');
+  pag_2.classList.remove('close');
+  pag_2.classList.add('open');
+}

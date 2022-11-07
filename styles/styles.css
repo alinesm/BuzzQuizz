@@ -388,3 +388,76 @@ body {
   line-height: 22px;
   color: #ffffff;
 }
+.close{
+  display: none;
+}
+.open{
+  display: flex;
+}
+/*----------------------------------------------
+        Conteúdo do Quizz
+/*----------------------------------------------*/
+.masterContainer_2{
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 69px;
+  margin-bottom: 100px;
+  background-color: #E5E5E5;
+}
+
+.cabecalho{
+width: 100%;
+height: 227px;
+background-color: purple;
+display: flex;
+align-items: center;
+justify-content: center;
+font-family: 'Roboto';
+font-style: normal;
+font-weight: 400;
+font-size: 39px;
+}
+.caixa_respostas{
+  width: 759px;
+  height: 676px;
+  background: white;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.05);
+  margin-top: 42px;
+  padding: 28px 35px 0px 35px;
+  display: flex;
+  flex-direction: column;
+}
+.respostas{
+  width: 688px;
+  height: 455px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.pergunta{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 689px;
+  height: 138px;
+  background-color: pink;
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 23px;
+}
+.img_resposta{
+  width: 330px;
+  height: 175px;
+  padding-bottom: 15px;
+}
+.resposta_certa, .resposta_errada{
+  width: 330px;
+  height: 217px;
+  padding-top: 20px;
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  }

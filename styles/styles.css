@@ -2,6 +2,11 @@
   box-sizing: border-box;
 }
 
+button,
+.voltarHome {
+  cursor: pointer;
+}
+
 .header {
   width: 100%;
   height: 69px;
@@ -53,12 +58,15 @@
   color: #b9b9b9;
 }
 
-.criarQuizzHome button {
+.masterContainer .criarQuizzHome button {
+  width: 151px;
+  height: 40px;
+  background-color: #fafafa;
+  border: 1px dashed #ec362d;
+  border-radius: 50px;
   margin: 30px auto;
   padding: 5px 20px;
   background: #fafafa;
-  border: 1px dashed #ec362d;
-  border-radius: 50px;
   font-family: "Roboto";
   font-style: normal;
   font-weight: 400;
@@ -71,35 +79,14 @@
   color: #ec362d;
 }
 
+.masterContainer .criarQuizzHome {
+  margin-bottom: 20px;
+}
+
 .titleQuizzesUsuario {
   display: flex;
   align-items: center;
 }
-
-/* ligar e desligar esses dois */
-.mostrarQuizzesUsuarios {
-  /* display: none; */
-  display: flex;
-  flex-direction: column;
-}
-
-.criarQuizzHome {
-  display: none;
-  /* display: flex; */
-  flex-direction: column;
-}
-
-/* -------------------------- */
-
-.home {
-  /* display: none; */
-}
-
-.criacaoDeQuizz {
-  display: none;
-}
-
-/* ------------------- */
 
 .textoParaSecao,
 .titleQuizzesUsuario p {
@@ -125,6 +112,32 @@
   margin-bottom: 30px;
 }
 
+.mostrarQuizzesUsuarios {
+  display: flex;
+  flex-direction: column;
+}
+
+ion-icon {
+  cursor: pointer;
+}
+
+.perguntasDoQuizz .form {
+  margin-bottom: 30px;
+}
+
+.criarQuizzHome {
+  display: none;
+  flex-direction: column;
+}
+
+.home {
+  flex-direction: column;
+}
+
+.criacaoDeQuizz {
+  display: none;
+}
+
 /* ------------------------------------ */
 
 body {
@@ -134,9 +147,27 @@ body {
 .informacoesBasicas {
   margin: auto;
   display: flex;
-  /* display: none; */
   flex-direction: column;
   align-items: center;
+  justify-content: center;
+}
+
+.informacoesBasicas form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.informacoesBasicas .entradaInformacoes {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 600px;
+  height: 256px;
+  background: #ffffff;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.05);
 }
 
 .desativado {
@@ -147,62 +178,7 @@ body {
   display: flex;
 }
 
-.perguntasDoQuizz,
-.niveisDoQuizz,
-.acessarSeuQuizz {
-  margin: auto;
-  /* display: flex; */
-  display: none;
-  flex-direction: column;
-  align-items: center;
-}
-
-form {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  background-color: yellow;
-}
-
-button {
-  cursor: pointer;
-}
-
-.informacoesBasicas .entradaInformacoes {
-  /* margin: auto; */
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  width: 600px;
-  height: 256px;
-
-  background: #ffffff;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.05);
-}
-
-.perguntasDoQuizz .containerPergunta1,
-.perguntasDoQuizz .containerPergunta2,
-.perguntasDoQuizz .containerPergunta3,
-.niveisDoQuizz .containerNivel1,
-.niveisDoQuizz .containerNivel2,
-.niveisDoQuizz .containerNivel3 {
-  margin: auto;
-  display: flex;
-  flex-direction: column;
-  /* align-items: center; */
-  justify-content: center;
-  width: 600px;
-  height: 100%;
-
-  background: #ffffff;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.05);
-}
-
-.informacoesBasicas input,
-.perguntasDoQuizz input,
-.niveisDoQuizz input {
+.masterContainer input {
   width: 564px;
   height: 46px;
   background: #ffffff;
@@ -211,31 +187,73 @@ button {
   margin-bottom: 9px;
 }
 
+.form,
+.formNivel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: #e5e5e5;
+}
+
+.perguntasDoQuizz,
+.niveisDoQuizz,
+.acessarSeuQuizz {
+  margin: auto;
+  display: none;
+  flex-direction: column;
+  align-items: center;
+}
+
 .perguntasDoQuizz div,
 .niveisDoQuizz div {
-  padding: 16px;
+  padding: 10px 10px 5px 10px;
 }
-.containerPergunta2 {
-  margin-top: 20px;
+.perguntasDoQuizz .inputs {
+  padding-bottom: 10px;
 }
 
-.containerPergunta2 div,
-.containerPergunta3 div {
+.inputs .urlRespImcorreta1,
+.inputs .urlRespImcorreta2 {
+  margin-bottom: 32px;
+}
+
+.inputs,
+.inputsNivel {
+  flex-direction: column;
+  display: none;
+  background-color: white;
+  align-items: center;
+}
+
+.formNivel .headerNivel,
+.form .headerPergunta {
   display: flex;
   align-items: center;
+  background-color: white;
   justify-content: space-between;
+  width: 600px;
+  height: 74px;
+  padding: 0 20px;
 }
 
-.containerPergunta2 div ion-icon,
-.containerPergunta3 div ion-icon {
+.headerPergunta ion-icon,
+.headerNivel ion-icon {
   width: 26px;
   height: 23px;
 }
 
-.niveisDoQuizz button,
-.informacoesBasicas button,
-.perguntasDoQuizz button,
-.acessarSeuQuizz button {
+.niveisDoQuizz .formNivel {
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 600px;
+  height: 100%;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.05);
+}
+
+.masterContainer button {
   margin-top: 86px;
   width: 368.86px;
   height: 54px;
@@ -249,23 +267,18 @@ button {
   align-items: center;
   text-align: center;
   justify-content: center;
-
   color: #fff5f4;
-
   background: #ec362d;
   border-radius: 15px;
 }
 
-.informacoesBasicas p,
-.perguntasDoQuizz p,
-.niveisDoQuizz p,
-.acessarSeuQuizz p {
+.masterContainer .criacaoDeQuizz p {
   font-family: "Roboto";
   font-style: normal;
   font-weight: 700;
   font-size: 23px;
   line-height: 27px;
-  margin-bottom: 27px;
+  /* margin-bottom: 27px; */
   display: flex;
   align-items: center;
   color: #000000;
@@ -276,7 +289,7 @@ button {
 }
 
 .niveisDoQuizz form p,
-.perguntasDoQuizz form p {
+.perguntasDoQuizz .form p {
   font-family: "Roboto";
   font-style: normal;
   font-weight: 700;
@@ -287,9 +300,8 @@ button {
 
   color: #000000;
 }
-.informacoesBasicas input::placeholder,
-.perguntasDoQuizz input::placeholder,
-.niveisDoQuizz input::placeholder {
+
+.masterContainer input::placeholder {
   font-family: "Roboto";
   font-style: italic;
   font-weight: 400;
@@ -297,6 +309,14 @@ button {
   line-height: 22px;
   padding-left: 13px;
   color: #bababa;
+}
+
+.acessarSeuQuizz p {
+  margin-bottom: 20px;
+}
+
+.acessarSeuQuizz button {
+  margin-bottom: 12px;
 }
 
 .acessarSeuQuizz div {
@@ -315,12 +335,6 @@ button {
   color: #ffffff;
 }
 
-/* .acessarSeuQuizz p:nth-child(3) {
-  margin-top: 10px;
-  background-color: yellow;
-} */
-
-/* ------------------------------------ */
 .niveisDoQuizz {
   display: none;
 }
@@ -329,19 +343,35 @@ button {
   display: none;
 }
 
-/* --------------------------- */
 .quizz {
   position: relative;
   margin-top: 10px;
   margin-right: 10px;
 }
 
+.quizz::after {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  content: "";
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(0, 0, 0, 0.5) 64.58%,
+    #000000 100%
+  );
+  border-radius: 5px;
+}
+
 .quizz img,
 .acessarSeuQuizz img {
   width: 340px;
   height: 181px;
-  /* background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 0.5) 64.58%, #000000 100%), url(" https://disneyplusbrasil.com.br/wp-content/uploads/2022/02/Os-Simpsons-Star-Plus.jpg"); */
   border-radius: 5px;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .quizz p {
